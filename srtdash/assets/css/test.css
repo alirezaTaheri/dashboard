@@ -1,0 +1,246 @@
+/*Base Color: #21CE99*/
+
+/*------------------------- 1. Core Css -------------------*/
+
+@font-face {
+    font-family: sahel;
+    src: url('../fonts/IRANSans(FaNum).ttf');
+}
+*{
+    font-family: Sahel;
+}
+
+.page-container {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    padding-right: 280px;
+    -webkit-transition: padding-right 0.3s ease 0s;
+    transition: padding-right 0.3s ease 0s;
+}
+
+.sbar_collapsed.page-container {
+    padding-right: 0;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.main-content {
+    width: 100%;
+    background: #F3F8FB;
+}
+
+
+/*------------------------- END Core Css -------------------*/
+
+
+/*-------------------- 2.1 Sidebar Menu -------------------*/
+
+.sidebar-menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99;
+    height: 100vh;
+    width: 280px;
+    overflow: hidden;
+    background: #ececec;
+    box-shadow: 2px 0 32px rgba(0, 0, 0, 0.05);
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.sbar_collapsed .sidebar-menu {
+    right: -280px;
+}
+
+.main-menu {
+    height: calc(100% - 100px);
+    overflow: hidden;
+    padding: 20px 10px 0 0;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.menu-inner {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.slimScrollBar {
+    background: #fff!important;
+    opacity: 0.1!important;
+}
+
+.sidebar-header {
+    padding: 0px 32px;
+    height: 50px;
+    background: #21CE99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #343e50;
+}
+.sidebar-menu .logo{
+    text-align: center;
+}
+.logo a {
+    display: inline-block;
+    max-width: 120px;
+}
+.logo a img {
+    margin:auto;
+    height: 45px;
+}
+.metismenu >li {
+    text-align: right;
+}
+.metismenu >li >a {
+    padding-right: 32px!important;
+}
+.metismenu li a {
+    direction: rtl;
+    position: relative;
+    display: block;
+    color: #8d97ad;
+    font-size: 15px;
+    text-transform: capitalize;
+    padding: 15px 15px;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+
+.metismenu li a i {
+    display: inline-block;
+    color: #6a56a5;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.metismenu li a:after {
+    position: absolute;
+    content: '\f107';
+    font-family: fontawesome;
+    left: 15px;
+    top: 12px;
+    color: #8d97ad;
+    font-size: 20px;
+}
+
+.metismenu li.active>a:after {
+    content: '\f106';
+}
+
+.metismenu li a:only-child:after {
+    content: '';
+}
+
+.metismenu li a span {
+    margin-right: 10px;
+}
+
+.metismenu li.active>a,
+.metismenu li:hover>a {
+    color: #fff;
+}
+
+.metismenu li li a {
+    padding: 8px 20px;
+}
+
+.metismenu li ul {
+    padding-right: 37px;
+}
+
+.metismenu >li:hover>a,
+.metismenu >li.active>a {
+    color: #fff;
+    background: #fff;
+}
+
+.metismenu li:hover>a,
+.metismenu li.active>a {
+    color: #343942;
+}
+
+.metismenu li:hover>a i,
+.metismenu li.active>a i {
+    color: #343942;
+}
+
+.metismenu li li a:after {
+    top: 6px;
+}
+
+/*-------------------- END Sidebar Menu -------------------*/
+
+
+
+/*-------------------- 2.2 Header Area -------------------*/
+
+.header-area {
+    overflow: hidden;
+    padding: 15px 30px;
+    height: 50px;
+    background: #ececec;
+    border-bottom: 1px solid #d8e3e7;
+}
+.header-area .row{
+    direction: rtl;
+    height: 100%;
+}
+
+.nav-btn {
+    /*margin: 10px 0px 0 30px;*/
+    cursor: pointer;
+}
+
+.nav-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #b3aaaa;
+    margin: 4px 0;
+    border-radius: 15px;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    box-shadow: 0 0 0 4px rgba(99, 96, 96, 0.03);
+}
+
+.nav-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-btn span:first-child {
+    -webkit-transform: rotate(45deg)translate(5px, 5px);
+            transform: rotate(45deg)translate(5px, 5px);
+}
+
+.nav-btn span:last-child {
+    -webkit-transform: rotate(-45deg)translate(3px, -3px);
+            transform: rotate(-45deg)translate(3px, -3px);
+}
+
+.sbar_collapsed .nav-btn span {
+    transform: none;
+    opacity: 1;
+}
+
+
+/*-------------------- 2.9 Letest Post ------------------- */
+
+.footer-area {
+    text-align: center;
+    padding: 23px 0 19px;
+    background: #fff;
+}
+
+.footer-area p {
+    color: #676666;
+    margin-bottom: 0;
+}
+
+/*-------------------- END Letest Post ------------------- */
+
