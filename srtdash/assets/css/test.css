@@ -181,9 +181,8 @@
 /*-------------------- 2.2 Header Area -------------------*/
 
 .header-area {
-    overflow: hidden;
     padding: 15px 30px;
-    height: 50px;
+    min-height: 50px;
     background: #ececec;
     border-bottom: 1px solid #d8e3e7;
 }
