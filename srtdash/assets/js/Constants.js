@@ -1,0 +1,1 @@
+var PANEL_PAGES= ["Market-View","Settings","Main-Page"]

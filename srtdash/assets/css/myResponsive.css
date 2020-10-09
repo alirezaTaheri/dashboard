@@ -120,16 +120,13 @@
         width: 365px;
     }
     .nav-btn {
-        position: fixed;
         z-index: 99;
-        right: 363px;
-        background: #303641;
-        padding: 14px;
-        top: 0;
+        background: #ececec;
+        padding-right: 4px;
         margin: 0;
     }
     .nav-btn span {
-        background: #fffbfb;
+        background: #fff;
     }
     .sbar_collapsed .sidebar-menu {
         right: -90%;
@@ -177,16 +174,13 @@
         width: 306px;
     }
     .nav-btn {
-        position: fixed;
         z-index: 99;
-        right: 304px;
-        background: #303641;
-        padding: 14px;
-        top: 0;
+        background: #ececec;
+        padding-right: 4px;
         margin: 0;
     }
     .nav-btn span {
-        background: #fffbfb;
+        background: #fff;
     }
     .sbar_collapsed .sidebar-menu {
         right: -90%;
@@ -288,16 +282,12 @@
         width: 306px;
     }
     .nav-btn {
-        position: fixed;
         z-index: 99;
-        right: 304px;
-        background: #303641;
-        padding: 14px;
-        top: 0;
+        padding-right: 4px;
         margin: 0;
     }
     .nav-btn span {
-        background: #fffbfb;
+        background: #000;
     }
     .sbar_collapsed .sidebar-menu {
         right: -90%;
@@ -414,11 +404,15 @@
         padding: 90px 0;
     }
 }
-
 /* Large Mobile :480px. */
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     /* dashboard one */
+
+    .search-package{
+        margin-top: 15px;
+        width: 100%;
+    }
     .mb-xs-30 {
         margin-bottom: 30px;
     }
@@ -433,16 +427,13 @@
         width: 365px;
     }
     .nav-btn {
-        position: fixed;
         z-index: 99;
-        right: 363px;
         background: #303641;
-        padding: 14px;
-        top: 0;
+        padding-right: 4px;
         margin: 0;
     }
     .nav-btn span {
-        background: #fffbfb;
+        background: #fff;
     }
     .sbar_collapsed .sidebar-menu {
         right: -90%;
@@ -539,25 +530,35 @@
     }
 }
 
+
+@media only screen and (min-width: 576px) and (max-width: 768px){
+    .search-package{
+        margin-top: 0px;
+        width: 100%;
+    }
+}
+
 /* small mobile :320px. */
 
-@media (min-width: 240px) and (max-width: 479px) {
+@media (min-width: 240px) and (max-width: 480px) {
+
+    .search-package{
+        margin-top: 15px;
+        width: 100%;
+    }
     /* dashboard one */
     /* sidebar */
     .sidebar-menu {
         width: calc(100% - 48px);
     }
     .nav-btn {
-        position: fixed;
         z-index: 99;
-        left: 0;
         background: #303641;
-        padding: 14px;
-        top: 0;
+        padding-right: 4px;
         margin: 0;
     }
     .nav-btn span {
-        background: #fffbfb;
+        background: #fff;
     }
     .sbar_collapsed .sidebar-menu {
         right: -100%;

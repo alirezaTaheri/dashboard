@@ -59,7 +59,7 @@
 .main-menu {
     height: calc(100% - 100px);
     overflow: hidden;
-    padding: 20px 10px 0 0;
+    padding: 20px 0 0 10px;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
@@ -76,12 +76,11 @@
 
 .sidebar-header {
     padding: 0px 32px;
-    height: 50px;
+    height: 58px;
     background: #21CE99;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #343e50;
 }
 .sidebar-menu .logo{
     text-align: center;
@@ -181,9 +180,8 @@
 /*-------------------- 2.2 Header Area -------------------*/
 
 .header-area {
-    overflow: hidden;
     padding: 15px 30px;
-    height: 50px;
+    min-height: 58px;
     background: #ececec;
     border-bottom: 1px solid #d8e3e7;
 }
@@ -201,12 +199,12 @@
     display: block;
     width: 22px;
     height: 2px;
-    background: #b3aaaa;
+    background: black;
     margin: 4px 0;
     border-radius: 15px;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-    box-shadow: 0 0 0 4px rgba(99, 96, 96, 0.03);
+    /*box-shadow: 0 0 0 4px rgba(99, 96, 96, 0.03);*/
 }
 
 .nav-btn span:nth-child(2) {

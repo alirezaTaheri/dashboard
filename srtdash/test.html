@@ -7,7 +7,7 @@
     <title>srtdash - ICO Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.4.4.1.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/themify-icons.css">
     <link rel="stylesheet" href="assets/css/metisMenu.css">
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/css/typography.css">
     <link rel="stylesheet" href="assets/css/default-css.css">
     <link rel="stylesheet" href="assets/css/test.css">
+    <link rel="stylesheet" href="assets/css/search.css">
     <link rel="stylesheet" href="assets/css/myResponsive.css">
     <!-- modernizr css -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -150,13 +151,42 @@
             <!-- header area start -->
             <div class="header-area" >
                 <div class="row align-items-center" >
+
                     <!-- nav and search button -->
-                    <div class="col-md-6 col-sm-8 clearfix" >
+                    <div class="col-md-6 col-sm-6 clearfix" style="display: flex;align-items: center;height: 100%;justify-content: space-between;" >
                         <div class="nav-btn pull-right" >
                             <span></span>
                             <span></span>
                             <span></span>
                         </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 clearfix" style="direction:ltr;padding: 0px;">
+                        <!-- ---------------------- Search bar --------------------- -->
+                        <div class="search-package" style="background: blue;display: inline-block;">
+                            <div class="container-fluid" style="padding: 0;">
+                                <div class="row" style="padding: 0;margin:0;width: 100%;">
+                                    <form style="width: 100%;">
+                                        <div class="search-input-field">
+                                            <input class="input " id="inputFocus" type="text" placeholder="جستجو" style="" />
+                                            <button class="search-confirm" >
+                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                                                    <g>
+                                                        <path d="M495,466.2L377.2,348.4c29.2-35.6,46.8-81.2,46.8-130.9C424,103.5,331.5,11,217.5,11C103.4,11,11,103.5,11,217.5   S103.4,424,217.5,424c49.7,0,95.2-17.5,130.8-46.7L466.1,495c8,8,20.9,8,28.9,0C503,487.1,503,474.1,495,466.2z M217.5,382.9   C126.2,382.9,52,308.7,52,217.5S126.2,52,217.5,52C308.7,52,383,126.3,383,217.5S308.7,382.9,217.5,382.9z"/>
+                                                    </g>
+                                                </svg>
+                                            </button>
+                                            <button class="clear" >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="row" id='search-results'style="padding:0;margin:0;background: yellow;position: absolute;width: 100%;height: 500px;"></div>
+                            </div>
+                        </div>
+                        <!-- ---------------------- Search bar End --------------------- -->
                     </div>
                 </div>
             </div>
@@ -182,7 +212,9 @@
     <script src="assets/js/jquery.slicknav.min.js"></script>
     <!-- others plugins -->
 <!--    <script src="assets/js/plugins.js"></script>-->
+    <script src="assets/js/Constants.js"></script>
     <script src="assets/js/test.js"></script>
+    <script src="assets/js/search.js"></script>
 </body>
 
 </html>
