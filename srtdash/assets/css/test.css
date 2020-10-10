@@ -57,7 +57,7 @@
 }
 
 .main-menu {
-    height: calc(100% - 100px);
+    height: calc(100% - 58px);
     overflow: hidden;
     padding: 20px 0 0 10px;
     -webkit-transition: all 0.3s ease 0s;
@@ -70,7 +70,7 @@
 }
 
 .slimScrollBar {
-    background: #fff!important;
+    background: #000!important;
     opacity: 0.1!important;
 }
 

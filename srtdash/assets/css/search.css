@@ -2,9 +2,15 @@
   position: relative;
   width: 410px;
 }
-#search-results{
+#search-results-package{
+  padding:8px;margin:0;position: absolute;width: 100%;
   display: none;
+  height: 200px;
   top: 120%;
+  background: #ececec;
+}
+#search-results{
+  overflow-y: auto;
 }
 .search-input-field input {
   height: 30px;

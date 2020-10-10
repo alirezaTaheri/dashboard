@@ -29,7 +29,12 @@
     slimscroll activation
     ==================================*/
     $('.menu-inner').slimScroll({
-        height: 'auto'
+        height: 'auto',
+        position: 'left',
+    });
+    $('#search-results').slimScroll({
+        position: 'left',
+        height: '0px',
     });
     /*================================
     stickey Header

@@ -15,7 +15,9 @@ $(document).ready(function(){
 					response = response.query.prefixsearch;
 					if (response.length > 0) {
 						$("#search-results").empty();
-						$("#search-results").css({"width": $("#inputFocus").css('width'), "display": "block"});
+						$("#search-results-package").css({"width": $("#inputFocus").css('width'), "display": "block"});
+						$("#search-results").css({"height": parseInt($("#search-results-package").css('height'))-parseInt($(".search-category-box").css('height'))-10});
+						$(".slimScrollDiv").css({"height": parseInt($("#search-results-package").css('height'))-parseInt($(".search-category-box").css('height'))-10});
 						response.forEach(function (item, index) {
 							console.log(item, index);
 							var type = 'Panel-Page'
@@ -25,7 +27,7 @@ $(document).ready(function(){
 							});
 						});
 					}else{
-						$("#search-results").css({"display": "none"});
+						$("#search-results-package").css({"display": "none"});
 					}
 				}
 			});
@@ -39,22 +41,24 @@ $(document).ready(function(){
 
 $(".search-input-field .clear").on('click', function () {
 	$("#inputFocus").val("");
-	$("#search-results").empty();
-	$("#search-results").css({"display": "none"});
+	$("#search-results-package").empty();
+	$("#search-results-package").css({"display": "none"});
 	$(".search-input-field .clear").css({"display": "none"});
 	last_input_length = 0;
 });
 $("#inputFocus").on("blur", function(){
-	$("#search-results").css({"display": "none"});
+	$("#search-results-package").css({"display": "none"});
 });
 $("#inputFocus").on("focus", function(){
-	if (!$("#search-results").is(':empty'))
-		$("#search-results").css({"width": $("#inputFocus").css('width'), "display": "block"});
+	if (!$("#search-results-package").is(':empty'))
+		$("#search-results-package").css({"width": $("#inputFocus").css('width'), "display": "block"});
 });
 function checkInput(char,str){
 	if (checkInputChanged(str)) {
 		str.length > 0 ? $(".search-input-field .clear").css({"display": "flex"}) : $(".search-input-field .clear").css({"display": "none"});
-		if (str.length < 1) $("#search-results").css({"display": "none"});
+		if (str.length < 1) {
+			$("#search-results-package").css({"display": "none"});
+		}
 	}
 	var restricted_keys = ['Control', 'Alt', 'Shift'];
 	if(!restricted_keys.includes(char) && str.trim().length > 1 && (checkInputChanged(str)|| char=="Enter"))
