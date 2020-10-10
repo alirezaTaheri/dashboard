@@ -152,7 +152,7 @@
     }
     .page-container,
     .sbar_collapsed.page-container {
-        padding-left: 0;
+        padding-right: 0;
     }
     /* sidebar collapsed end */
     /* pricing */
@@ -206,7 +206,7 @@
     }
     .page-container,
     .sbar_collapsed.page-container {
-        padding-left: 0;
+        padding-right: 0;
     }
     /* fact area */
     .single-report h2 {
@@ -318,7 +318,7 @@
     }
     .page-container,
     .sbar_collapsed.page-container {
-        padding-left: 0;
+        padding-right: 0;
     }
     /* main content */
     .search-box input {
@@ -407,6 +407,11 @@
 /* Large Mobile :480px. */
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    .search-package{
+        margin-top: 15px;
+        width: 100%;
+    }
     /* dashboard one */
 
     .search-package{
@@ -459,7 +464,7 @@
     }
     .page-container,
     .sbar_collapsed.page-container {
-        padding-left: 0;
+        padding-right: 0;
     }
     /* main content */
     .search-box input {
@@ -533,7 +538,7 @@
 
 @media only screen and (min-width: 576px) and (max-width: 768px){
     .search-package{
-        margin-top: 0px;
+        margin-top: 15px;
         width: 100%;
     }
 }
@@ -584,6 +589,6 @@
     }
     .page-container,
     .sbar_collapsed.page-container {
-        padding-left: 0;
+        padding-right: 0;
     }
 }

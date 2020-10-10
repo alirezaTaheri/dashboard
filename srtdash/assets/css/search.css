@@ -1,13 +1,10 @@
 .search-package{
   position: relative;
-  width: 310px;
-}
-.search-package:hover div{
-  background: red;
-  display: block;
+  width: 410px;
 }
 #search-results{
-  /*display: none;*/
+  display: none;
+  top: 120%;
 }
 .search-input-field input {
   height: 30px;
@@ -115,66 +112,18 @@
   transition: width .2s ease-in;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+.search-category-box{
+  display: flex;
 }
 
-.nv {
-  overflow: hidden;
-  background-color: #333;
+.search-category{
+  flex: 1;text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 3px;
 }
 
-.nv a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.search-category:hover,.search-category.active{
+  background: #adb5bd;
+  color: #f8f9fa;
 }
-
-.dd {
-  float: left;
-  overflow: hidden;
-}
-
-.dd .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.nv a:hover, .dd:hover .dropbtn {
-  background-color: red;
-}
-
-.dd-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dd-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dd-content a:hover {
-  background-color: #ddd;
-}
-
-/*.dd:hover .dd-content {*/
-/*  display: block;*/
-/*}*/

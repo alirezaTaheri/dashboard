@@ -1,10 +1,9 @@
 $(document).ready(function(){
-	var restricted_keys = ['Control', 'Alt', 'Shift'];
 	$("#inputFocus").on("keyup", function(e) {
-		$(".dd-content").css({"width":$(this).css('width'),"display":"block"});
 		var value = $(this).val().toLowerCase();
-		if(!restricted_keys.includes(e.key) && value.length > 1){
-			$(".dd-content").empty();
+		console.log(checkInputChanged(value));
+		if(checkInput(e.key,value)){
+			console.log("SENDING REQUEST");
 			$.ajax({
 				url: 'https://en.wikipedia.org/w/api.php?',
 				data: 'action=query&list=prefixsearch&pssearch='+value+'&format=json&callback=?',
@@ -12,22 +11,74 @@ $(document).ready(function(){
 				// type: 'post',
 				// data: {search:value},
 				dataType: 'json',
-				success:function(response){
-					console.log(response.query.prefixsearch);
+				success:function(response) {
 					response = response.query.prefixsearch;
-					response.forEach(function (item, index) {
-						console.log(item, index);
-						var type = 'Panel-Page'
-						$(".dd-content").append("<li type='"+type+" id='"+item.title+" '>"+name+"</li>");
-						$("#search-result li").bind("click",function(){
-							click_on_search_result(this);
+					if (response.length > 0) {
+						$("#search-results").empty();
+						$("#search-results").css({"width": $("#inputFocus").css('width'), "display": "block"});
+						response.forEach(function (item, index) {
+							console.log(item, index);
+							var type = 'Panel-Page'
+							$("#search-results").append("<li type='" + type + " id='" + item.title + " '>" + item.title + "</li>");
+							$("#search-result li").bind("click", function () {
+								click_on_search_result(this);
+							});
 						});
-					});
+					}else{
+						$("#search-results").css({"display": "none"});
+					}
 				}
 			});
+		}else {
 		}
+		last_input_length = value.length;
 	});
 });
+
+// ======================== Search Utils ==============================
+
+$(".search-input-field .clear").on('click', function () {
+	$("#inputFocus").val("");
+	$("#search-results").empty();
+	$("#search-results").css({"display": "none"});
+	$(".search-input-field .clear").css({"display": "none"});
+	last_input_length = 0;
+});
+$("#inputFocus").on("blur", function(){
+	$("#search-results").css({"display": "none"});
+});
+$("#inputFocus").on("focus", function(){
+	if (!$("#search-results").is(':empty'))
+		$("#search-results").css({"width": $("#inputFocus").css('width'), "display": "block"});
+});
+function checkInput(char,str){
+	if (checkInputChanged(str)) {
+		str.length > 0 ? $(".search-input-field .clear").css({"display": "flex"}) : $(".search-input-field .clear").css({"display": "none"});
+		if (str.length < 1) $("#search-results").css({"display": "none"});
+	}
+	var restricted_keys = ['Control', 'Alt', 'Shift'];
+	if(!restricted_keys.includes(char) && str.trim().length > 1 && (checkInputChanged(str)|| char=="Enter"))
+		return true;
+	return false;
+}
+var last_input_length = 0;
+function checkInputChanged(input) {
+	return last_input_length != input.length;
+}
+
+// ======================== End Search Utils ==============================
+// ======================== OnClick Search Items ==============================
+
 function click_on_search_result(element){
 	console.log("clicked on this one: " + element);
 }
+
+// ======================== End OnClick Search Items ==============================
+// ======================== Search Category ==============================
+
+$(".search-category").on("click", function(){
+		$(".search-category.active").toggleClass("active");
+		$(this).addClass("active");
+});
+
+// ======================== End Search Category ==============================

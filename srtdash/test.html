@@ -153,16 +153,17 @@
                 <div class="row align-items-center" >
 
                     <!-- nav and search button -->
-                    <div class="col-md-6 col-sm-6 clearfix" style="display: flex;align-items: center;height: 100%;justify-content: space-between;" >
+                    <div class="col-md-6 col-sm-6 clearfix" >
                         <div class="nav-btn pull-right" >
                             <span></span>
                             <span></span>
                             <span></span>
                         </div>
                     </div>
+
                     <div class="col-md-6 col-sm-6 clearfix" style="direction:ltr;padding: 0px;">
                         <!-- ---------------------- Search bar --------------------- -->
-                        <div class="search-package" style="background: blue;display: inline-block;">
+                        <div class="search-package" style="display: inline-block;">
                             <div class="container-fluid" style="padding: 0;">
                                 <div class="row" style="padding: 0;margin:0;width: 100%;">
                                     <form style="width: 100%;">
@@ -183,7 +184,14 @@
                                         </div>
                                     </form>
                                 </div>
-                                <div class="row" id='search-results'style="padding:0;margin:0;background: yellow;position: absolute;width: 100%;height: 500px;"></div>
+                                <div class="row" id='search-results'style="display:block;padding:8px;margin:0;background: #ececec;position: absolute;width: 100%;overflow-y:scroll;height: 200px;">
+                                    <div class="search-category-box" >
+                                        <div class='search-category active'>همه</div>
+                                        <div class='search-category'>سهام</div>
+                                        <div class='search-category'>اخبار</div>
+                                        <div class='search-category'>پنل</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!-- ---------------------- Search bar End --------------------- -->
@@ -212,7 +220,7 @@
     <script src="assets/js/jquery.slicknav.min.js"></script>
     <!-- others plugins -->
 <!--    <script src="assets/js/plugins.js"></script>-->
-    <script src="assets/js/Constants.js"></script>
+    <script src="assets/js/search.js"></script>
     <script src="assets/js/test.js"></script>
     <script src="assets/js/search.js"></script>
 </body>
