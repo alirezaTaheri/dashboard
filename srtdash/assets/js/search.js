@@ -34,16 +34,22 @@ $(document).ready(function(){
 		last_input_length = value.length;
 	});
 });
-function click_on_search_result(element){
-	console.log("clicked on this one: " + element);
-}
 
 // ======================== Search Utils ==============================
 
 $(".search-input-field .clear").on('click', function () {
 	$("#inputFocus").val("");
+	$("#search-results").empty();
 	$("#search-results").css({"display": "none"});
 	$(".search-input-field .clear").css({"display": "none"});
+	last_input_length = 0;
+});
+$("#inputFocus").on("blur", function(){
+	$("#search-results").css({"display": "none"});
+});
+$("#inputFocus").on("focus", function(){
+	if (!$("#search-results").is(':empty'))
+		$("#search-results").css({"width": $("#inputFocus").css('width'), "display": "block"});
 });
 function checkInput(char,str){
 	if (checkInputChanged(str)) {
@@ -60,4 +66,19 @@ function checkInputChanged(input) {
 	return last_input_length != input.length;
 }
 
-// ======================== Wnd Search Utils ==============================
+// ======================== End Search Utils ==============================
+// ======================== OnClick Search Items ==============================
+
+function click_on_search_result(element){
+	console.log("clicked on this one: " + element);
+}
+
+// ======================== End OnClick Search Items ==============================
+// ======================== Search Category ==============================
+
+$(".search-category").on("click", function(){
+		$(".search-category.active").toggleClass("active");
+		$(this).addClass("active");
+});
+
+// ======================== End Search Category ==============================
